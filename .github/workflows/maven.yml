@@ -34,3 +34,16 @@ jobs:
           FLYWAY_PASSWORD: ${{ secrets.DB2_PASSWD }}
           FLYWAY_USER: ${{ secrets.DB2_USERNAME }}
           FLYWAY_URL: ${{ secrets.DB2_JDBC_URL }}
+  deploy:  
+    name: Deploy
+    runs-on: ubuntu-latest
+    
+    
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions-hub/gcloud@master
+        env:
+          PROJECT_ID: lateral-linker-276514
+          APPLICATION_CREDENTIALS: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
+        with:
+          args: app deploy app.yaml  
