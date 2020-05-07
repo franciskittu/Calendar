@@ -25,12 +25,12 @@ jobs:
     - name: Clean CI DB 
       run: mvn flyway:clean
       env:
-          FLYWAY_PASSWORD: ${{ secret.DB2_PASSWD }}
-          FLYWAY_USER: ${{ secret.DB2_USERNAME }}
-          FLYWAY_URL: ${{ secret.DB2_JDBC_URL }}
+          FLYWAY_PASSWORD: ${{ secrets.DB2_PASSWD }}
+          FLYWAY_USER: ${{ secrets.DB2_USERNAME }}
+          FLYWAY_URL: ${{ secrets.DB2_JDBC_URL }}
     - name: Test DB Migration
       run: mvn flyway:migrate
       env: 
-          FLYWAY_PASSWORD: ${{ secret.DB2_PASSWD }}
-          FLYWAY_USER: ${{ secret.DB2_USERNAME }}
-          FLYWAY_URL: ${{ secret.DB2_JDBC_URL }}
+          FLYWAY_PASSWORD: ${{ secrets.DB2_PASSWD }}
+          FLYWAY_USER: ${{ secrets.DB2_USERNAME }}
+          FLYWAY_URL: ${{ secrets.DB2_JDBC_URL }}
