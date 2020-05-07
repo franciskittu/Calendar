@@ -24,5 +24,13 @@ jobs:
       run: mvn -B package --file pom.xml
     - name: Clean CI DB 
       run: mvn flyway:clean
+      env: 
+          FLYWAY_PASSWORD: ${{ secret.DB2_PASSWD }}
+          FLYWAY_USER: ${{ secret.DB2_USERNAME }}
+          FLYWAY_URL: ${{ secret.DB2_JDBC_URL }}
     - name: Test DB Migration
       run: mvn flyway:migrate
+      env: 
+          FLYWAY_PASSWORD: ${{ secret.DB2_PASSWD }}
+          FLYWAY_USER: ${{ secret.DB2_USERNAME }}
+          FLYWAY_URL: ${{ secret.DB2_JDBC_URL }}
