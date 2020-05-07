@@ -21,6 +21,7 @@
 		<flyway.password>bv6w0njsqf+c9189</flyway.password>
 		<flyway.locations>filesystem:src/main/resources/db/migration</flyway.locations>
 		<flyway.url>jdbc:db2://dashdb-txn-sbox-yp-lon02-02.services.eu-gb.bluemix.net:50000/BLUDB</flyway.url>
+		<flyway.baselineOnMigrate>true</flyway.baselineOnMigrate>
 	</properties>
 
 	<dependencies>
