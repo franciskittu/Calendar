@@ -22,5 +22,7 @@ jobs:
         java-version: 1.8
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: Clean CI DB 
+      run: mvn flyway:clean
     - name: Test DB Migration
       run: mvn flyway:migrate
