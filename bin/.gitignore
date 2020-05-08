@@ -29,11 +29,7 @@ build/
 
 ### VS Code ###
 .vscode/
-
-### Eclipse Metadata ##
 .metadata/.plugins/org.eclipse.tm.terminal.view.ui/.executables/data.properties
 .metadata/.lock
 .metadata/.log
 .metadata/.mylyn/repositories.xml.zip
-.metadata/.plugins/com.ibm.ccl.help.preferenceharvester/help/help.war
-.metadata
